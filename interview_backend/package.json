@@ -2,10 +2,10 @@
   "name": "interview_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.tsx",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.tsx",
-    "start": "node index.tsx"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
