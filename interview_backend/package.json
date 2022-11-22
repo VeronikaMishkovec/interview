@@ -2,9 +2,10 @@
   "name": "interview_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.tsx",
+    "start": "node index.tsx"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/VeronikaMishkovec/interview/issues"
   },
-  "homepage": "https://github.com/VeronikaMishkovec/interview#readme"
+  "homepage": "https://github.com/VeronikaMishkovec/interview#readme",
+  "dependencies": {
+    "@types/typescript": "^2.0.0",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.12.0",
+    "mongoose": "^6.7.2",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
