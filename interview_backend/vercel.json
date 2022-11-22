@@ -2,9 +2,9 @@
   "version": 2,
   "name": "interview",
   "builds": [
-    { "src": "index.tsx", "use": "@vercel/node" }
+    { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/index.tsx" }
+    { "src": "/(.*)", "dest": "/index.js" }
   ]
 }
