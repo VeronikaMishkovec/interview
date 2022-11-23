@@ -26,6 +26,20 @@ class TokenService {
     const token = await tokenModel.create({ user: userId, refreshToken });
     return token;
   }
+
+  validateRefreshToken(token) {
+    try {
+      const data = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+      return data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  async findToken(refreshToken) {
+    const tokenData = await tokenModel.findOne({ refreshToken });
+    return tokenData;
+  }
 }
 
 module.exports = new TokenService();
