@@ -18,6 +18,16 @@ class AuthController {
       next(e);
     }
   }
+
+  async login(req, res, next) {
+    const { email, password } = req.body;
+    try {
+      const user = await AuthService.login(email, password);
+      return res.json(user);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new AuthController();
