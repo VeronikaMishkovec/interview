@@ -17,5 +17,6 @@ router.post(
   body("password").isLength({ min: 4 }),
   AuthController.login
 );
+router.post("/refresh", AuthController.refresh); //params: token
 
 module.exports = router;

@@ -44,6 +44,28 @@ class AuthService {
 
     return { ...tokens, user_id: user._id, email: user.email };
   }
+
+  async refresh(refreshToken) {
+    if (!refreshToken) {
+      throw ApiError.UnAuthError();
+    }
+
+    const authData = tokenService.validateRefreshToken(refreshToken);
+    const dbToken = await tokenService.findToken(refreshToken);
+    if (!authData || !dbToken) {
+      throw ApiError.UnAuthError();
+    }
+
+    const user = await UserModel.findById(authData.id);
+
+    const tokens = tokenService.generateTokens({
+      id: user._id,
+      email: user.email,
+    });
+    await tokenService.saveToken(user._id, tokens.refreshToken);
+
+    return { ...tokens, userId: user._id, email: user.email };
+  }
 }
 
 module.exports = new AuthService();
