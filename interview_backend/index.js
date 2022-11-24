@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const AuthRouter = require('./routes/AuthRouter')
 
@@ -11,6 +12,10 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'https://interview-alpha.vercel.app/'
+}));
 
 app.use('/auth', AuthRouter);
 
