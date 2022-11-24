@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5001;
 app.use(express.json());
 
 app.use(cors({
-  origin: 'https://interview-alpha.vercel.app/'
+  origin: '*'
 }));
 
 app.use('/auth', AuthRouter);
