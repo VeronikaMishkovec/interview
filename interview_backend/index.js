@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const AuthRouter = require('./routes/AuthRouter')
+const CategoryRouter = require('./routes/CategoryRouter')
 
 const ErrorMiddleware = require("./middlewares/auth")
 
@@ -19,6 +20,7 @@ app.use(cors({
 }));
 
 app.use('/auth', AuthRouter);
+app.use('/category', CategoryRouter);
 
 app.use(ErrorMiddleware);
 
