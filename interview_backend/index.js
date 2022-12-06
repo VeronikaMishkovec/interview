@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const AuthRouter = require('./routes/AuthRouter')
 const CategoryRouter = require('./routes/CategoryRouter')
+const QuestionsRouter = require('./routes/QuestionsRouter')
 
 const ErrorMiddleware = require("./middlewares/auth")
 
@@ -21,6 +22,7 @@ app.use(cors({
 
 app.use('/auth', AuthRouter);
 app.use('/category', CategoryRouter);
+app.use('/question', QuestionsRouter);
 
 app.use(ErrorMiddleware);
 
